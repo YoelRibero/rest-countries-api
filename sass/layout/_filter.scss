@@ -1,0 +1,128 @@
+.filter {
+    margin-bottom: 2rem;
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+.filter-search {
+    background: $white;
+    padding: 1rem 1rem 1rem 0;
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @media screen and (min-width: 1024px) {
+        width: 39%;
+    } 
+    input {
+        border: 0;
+        outline: none;
+        width: 80%;
+        &::placeholder {
+            color: #ccc;
+        }
+    }
+}
+
+.filter-region {
+    @media screen and (min-width: 1024px) {
+        width: 18%;
+    }
+}
+
+.filter-search-icon {
+    color: $dark-gray;
+    font-size: 20px;
+    font-weight: 600;
+    width: 20%;
+}
+
+.filter-region-select {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    position: relative;
+    @media screen and (min-width: 1024px) {
+        width: 100%;
+    }
+    label {
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
+  
+.filter-region-options-container {
+    background: $white;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 1rem;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 65px;
+  
+    order: 1;
+    &.active {
+        max-height: 240px;
+        opacity: 1;
+    }
+    &::-webkit-scrollbar {
+        width: 2px;
+        background: #0d141f;
+        border-radius: 0 2px 2px 0;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #525861;
+        border-radius: 0 2px 2px 0;
+    }
+}
+  
+.selected {
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+    position: relative;
+    padding: 1rem;
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  
+    order: 0;
+    &::after {
+        content: "";
+        background: url("../img/down.svg");
+        background-size: (contain);
+        background-repeat: no-repeat;
+      
+        position: absolute;
+        height: 100%;
+        width: 10px;
+        right: 7%;
+        top: 40%;
+      
+        transition: all 0.4s;
+    }
+}
+  
+.filter-region-option, .selected {
+    cursor: pointer;
+    font-weight: 600;
+}
+  
+.filter-region-option {
+    margin-bottom: .5rem;
+    &:hover {
+        color: #333;
+    }
+    .radio {
+        display: none;
+    }
+}
+

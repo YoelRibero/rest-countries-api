@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Rest Countries API</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h4>Where in the world?</h4>
+        </div>
+    </header>
+    <div class="home">
+        <div class="container">
+            <section class="filter">
+                <div class="filter-search">
+                    <ion-icon name="search-outline" class="filter-search-icon"></ion-icon>
+                    <input type="text" placeholder="Search for a country...">
+                </div>
+                <div class="filter-region">
+                    <div class="filter-region-select">
+                        <div class="filter-region-options-container">
+                          <div class="filter-region-option">
+                            <input type="radio" class="radio" value="africa" name="category" />
+                            <label for="africa">Africa</label>
+                          </div>
+                          <div class="filter-region-option">
+                            <input type="radio" class="radio" value="america" name="category" />
+                            <label for="america">America</label>
+                          </div>
+                          <div class="filter-region-option">
+                            <input type="radio" class="radio" value="asia" name="category" />
+                            <label for="asia">Asia</label>
+                          </div>
+                          <div class="filter-region-option">
+                            <input type="radio" class="radio" value="europe" name="category" />
+                            <label for="europe">Europe</label>
+                          </div>
+                          <div class="filter-region-option">
+                            <input type="radio" class="radio" value="oceania" name="category" />
+                            <label for="oceania">Oceania</label>
+                          </div>
+                        </div>
+                
+                        <div class="selected">
+                            Filter by Region
+                        </div>
+                      </div>
+                </div>
+            </section>
+
+            <section class="countries">
+                <div class="countries-container countries-grid">
+                    <!-- List Countries -->
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="modal-countries">
+      <div class="overlay">
+        <div class="modal-container">
+          <div class="btn-close-container">
+            <div class="btn-close">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+              Back
+            </div>
+          </div>
+          
+          <div class="modal-content">
+            <!-- Country Info -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Icons free -->
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

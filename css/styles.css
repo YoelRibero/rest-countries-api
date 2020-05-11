@@ -1,0 +1,427 @@
+/* line 1, ../sass/_global.scss */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+}
+
+/* line 6, ../sass/_global.scss */
+.home {
+  background-color: #fafafa;
+  padding: 3rem 0;
+}
+
+/* line 1, ../sass/layout/_header.scss */
+.header {
+  padding: 1.5rem 0;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+/* line 4, ../sass/layout/_header.scss */
+.header h4 {
+  font-weight: 800;
+  font-size: 16px;
+}
+@media screen and (min-width: 1024px) {
+  /* line 4, ../sass/layout/_header.scss */
+  .header h4 {
+    font-size: 20px;
+  }
+}
+
+/* line 1, ../sass/layout/_filter.scss */
+.filter {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  /* line 1, ../sass/layout/_filter.scss */
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+/* line 10, ../sass/layout/_filter.scss */
+.filter-search {
+  background: white;
+  padding: 1rem 1rem 1rem 0;
+  border-radius: 5px;
+  margin-bottom: 3rem;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  /* line 10, ../sass/layout/_filter.scss */
+  .filter-search {
+    width: 39%;
+  }
+}
+/* line 23, ../sass/layout/_filter.scss */
+.filter-search input {
+  border: 0;
+  outline: none;
+  width: 80%;
+}
+/* line 27, ../sass/layout/_filter.scss */
+.filter-search input::placeholder {
+  color: #ccc;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 33, ../sass/layout/_filter.scss */
+  .filter-region {
+    width: 18%;
+  }
+}
+
+/* line 39, ../sass/layout/_filter.scss */
+.filter-search-icon {
+  color: #858585;
+  font-size: 20px;
+  font-weight: 600;
+  width: 20%;
+}
+
+/* line 46, ../sass/layout/_filter.scss */
+.filter-region-select {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  /* line 46, ../sass/layout/_filter.scss */
+  .filter-region-select {
+    width: 100%;
+  }
+}
+/* line 54, ../sass/layout/_filter.scss */
+.filter-region-select label {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* line 60, ../sass/layout/_filter.scss */
+.filter-region-options-container {
+  background: white;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 65px;
+  order: 1;
+}
+/* line 74, ../sass/layout/_filter.scss */
+.filter-region-options-container.active {
+  max-height: 240px;
+  opacity: 1;
+}
+/* line 78, ../sass/layout/_filter.scss */
+.filter-region-options-container::-webkit-scrollbar {
+  width: 2px;
+  background: #0d141f;
+  border-radius: 0 2px 2px 0;
+}
+/* line 83, ../sass/layout/_filter.scss */
+.filter-region-options-container::-webkit-scrollbar-thumb {
+  background: #525861;
+  border-radius: 0 2px 2px 0;
+}
+
+/* line 89, ../sass/layout/_filter.scss */
+.selected {
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: .5rem;
+  position: relative;
+  padding: 1rem;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  order: 0;
+}
+/* line 98, ../sass/layout/_filter.scss */
+.selected::after {
+  content: "";
+  background: url("../img/down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 10px;
+  right: 7%;
+  top: 40%;
+  transition: all 0.4s;
+}
+
+/* line 114, ../sass/layout/_filter.scss */
+.filter-region-option, .selected {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* line 119, ../sass/layout/_filter.scss */
+.filter-region-option {
+  margin-bottom: .5rem;
+}
+/* line 121, ../sass/layout/_filter.scss */
+.filter-region-option:hover {
+  color: #333;
+}
+/* line 124, ../sass/layout/_filter.scss */
+.filter-region-option .radio {
+  display: none;
+}
+
+/* line 1, ../sass/layout/_countries.scss */
+.countries-grid {
+  display: grid;
+  grid-row-gap: 2rem;
+}
+@media screen and (min-width: 480px) {
+  /* line 1, ../sass/layout/_countries.scss */
+  .countries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 1, ../sass/layout/_countries.scss */
+  .countries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  /* line 1, ../sass/layout/_countries.scss */
+  .countries-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* line 17, ../sass/layout/_countries.scss */
+.countries-country {
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 480px) {
+  /* line 17, ../sass/layout/_countries.scss */
+  .countries-country {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* line 30, ../sass/layout/_countries.scss */
+.country-image img {
+  width: 100%;
+}
+
+/* line 35, ../sass/layout/_countries.scss */
+.country-info {
+  padding: 2rem 1rem;
+  font-size: 16px;
+}
+/* line 38, ../sass/layout/_countries.scss */
+.country-info span {
+  font-weight: 600;
+}
+
+/* line 43, ../sass/layout/_countries.scss */
+.country-info-name {
+  margin-bottom: 1rem;
+}
+/* line 45, ../sass/layout/_countries.scss */
+.country-info-name a {
+  font-weight: 800;
+  font-size: 20px;
+  color: #222;
+}
+
+/* line 52, ../sass/layout/_countries.scss */
+.countries-border-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* line 58, ../sass/layout/_countries.scss */
+.country-border {
+  display: inline-block;
+  padding: .2rem 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  background-color: #2b3945;
+  width: 120px;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* line 1, ../sass/layout/_modal.scss */
+.modal-countries {
+  display: none;
+}
+/* line 3, ../sass/layout/_modal.scss */
+.modal-countries.active {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 10, ../sass/layout/_modal.scss */
+.modal-countries.active .overlay {
+  animation: fade .3s forwards;
+}
+/* line 13, ../sass/layout/_modal.scss */
+.modal-countries.active .modal-container {
+  animation: fadeDown .5s forwards;
+}
+
+/* line 19, ../sass/layout/_modal.scss */
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 28, ../sass/layout/_modal.scss */
+.modal-container {
+  border-radius: 8px;
+  position: relative;
+  margin: 1rem;
+  max-height: 600px;
+  overflow-y: scroll;
+  transition: .3s;
+}
+/* line 35, ../sass/layout/_modal.scss */
+.modal-container .btn-close-container {
+  background-color: #202c37;
+  padding: 2rem 2rem 0;
+}
+/* line 39, ../sass/layout/_modal.scss */
+.modal-container .btn-close {
+  color: white;
+  font-size: 14px;
+  padding: .5rem 1rem;
+  text-align: center;
+  background-color: #2b3945;
+  width: 110px;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+/* line 52, ../sass/layout/_modal.scss */
+.modal-container .btn-close ion-icon {
+  margin-right: .5rem;
+}
+/* line 56, ../sass/layout/_modal.scss */
+.modal-container .modal-content {
+  background-color: #202c37;
+  padding: 2rem;
+  border: 0;
+}
+/* line 60, ../sass/layout/_modal.scss */
+.modal-container .modal-content .country-info-name a, .modal-container .modal-content .country-info {
+  color: #fff;
+}
+/* line 63, ../sass/layout/_modal.scss */
+.modal-container .modal-content .country-info {
+  font-size: 14px;
+}
+/* line 66, ../sass/layout/_modal.scss */
+.modal-container .modal-content .country-info .country-info-details div {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 801px) {
+  /* line 71, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* line 76, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .country-image {
+    width: 40%;
+  }
+  /* line 79, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .country-info {
+    width: 50%;
+  }
+  /* line 82, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .countries-border {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  /* line 86, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .countries-border .countries-border-title {
+    margin: 0;
+    margin-right: .5rem;
+  }
+  /* line 91, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .country-info-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    margin-bottom: 2rem;
+  }
+  /* line 96, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .country-info-details .country-info-details-general, .modal-container .modal-content .country-container .country-info-details .country-info-details-others {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
