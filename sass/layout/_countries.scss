@@ -38,6 +38,9 @@
     span {
         font-weight: 600;
     }
+    span + span {
+        font-weight: normal;
+    }
 }
 
 .country-info-name {
@@ -65,4 +68,20 @@
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     border-radius: 3px;
+    margin-bottom: .5rem;
+}
+
+.country-info-languages,  .country-info-carrency{
+    .country-language,  .country-currency{
+        &::after {
+            content: ',';
+            display: inline-block;
+            margin-right: .5rem;
+        }
+        &:last-child {
+            &::after {
+                content: '';
+            }
+        }
+    }
 }

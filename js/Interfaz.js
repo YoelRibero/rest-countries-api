@@ -1,16 +1,13 @@
-import { api } from './app.js';
-import { API } from './Api.js';
+import { api, $modalCountries, $overlay, $modalContainer } from './app.js';
 
 export class Interfaz {
     constructor() {
         this.api = api;
-        this.modal = document.querySelector('.modal-countries');
         this.init = this.init();
     }
 
     init() {
         this.dataArray();
-        this.getDataCountry();
     }
 
     dataArray() {
@@ -55,7 +52,7 @@ export class Interfaz {
         )
     }
 
-    templateModal(name, image, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders) {
+    templateModal(name, image, nativeName, population, region, subregion, capital, topLevelDomain) {
         return (
             `
             <div class="country-container">
@@ -96,22 +93,29 @@ export class Interfaz {
                         </div>
                         <div class="country-info-carrency">
                             <span>Currencies: </span>
-                            ${currencies}
+                            
                         </div>
                         <div class="country-info-languages">
                             <span>Languages: </span>
-                            ${languages}
+                            
+                        </div>
                         </div>
                     </div>
-                </div>
-                <div class="countries-border">
-                    <div class="countries-border-title">Border Countries:</div>
-                    <div class="country-border">${borders}</div>
-                </div>
+                    <div class="countries-border">
+                        <div class="countries-border-title">Border Countries:</div>
+                    </div>
                 </div>
             </div>
             `
         );
+    }
+
+    templateItems(classItem, item) {
+        return(
+            `
+                <span class="${classItem}">${item}</span>
+            `
+        )
     }
 
     tourResults(data) {
@@ -123,46 +127,43 @@ export class Interfaz {
         });
     }
 
+    appendTemplateItem (classItem, item, container) {
+        console.log(item);
+        const template = this.createTemplate(this.templateItems(classItem, item));
+        container.appendChild(template);
+    }
+
     hideModal() {
-        document.querySelector('.overlay').style.animation = 'fadeOut .3s forwards';
-        document.querySelector('.modal-container').style.animation = 'fadeUp .2s forwards';
+        $overlay.style.animation = 'fadeOut .5s forwards';
+        $modalContainer.style.animation = 'fadeUp .3s forwards';
         setTimeout(() => {
-            document.querySelector('.modal-countries').classList.remove('active');
-            document.querySelector('.overlay').style.animation = '';
-            document.querySelector('.modal-container').style.animation = '';
+            $modalCountries.classList.remove('active');
+            $overlay.style.animation = '';
+            $modalContainer.style.animation = '';
         }, 1000);
     }
 
-    showModal(data) {
+    showModal(data, container) {
         console.log(data);
         const $modalContent = document.querySelector('.modal-content');
         const { name, flag, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = data;
-        $modalContent.innerHTML = this.templateModal(name, flag, nativeName, population, region, subregion, capital, topLevelDomain, null, null, null);
-        this.modal.classList.add('active');
-        const buttonClose = document.querySelector('.btn-close');
-        buttonClose.addEventListener('click', this.hideModal);
-        window.addEventListener('click', () => {
-            if(event.target === document.querySelector('.overlay')) {
-                this.hideModal();
-            }
+        $modalContent.innerHTML = this.templateModal(name, flag, nativeName, population, region, subregion, capital, topLevelDomain);
+        borders.forEach(border => {
+            setTimeout(() => {
+                this.appendTemplateItem('country-border', border, document.querySelector('.countries-border'));
+            }, 500);
         })
-    }
-
-    getDataCountry() {
-        setTimeout(() => {
-            const titleCountries = document.querySelectorAll('.country-info-name a');
-            titleCountries.forEach(country => {
-                country.addEventListener('click', e => {
-                    e.preventDefault();
-                    const countryCode = e.target.dataset.country;
-                    // this.modal.classList.add('active');
-                    const dataCountry = new API(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
-                    dataCountry.getData()
-                        .then(data => {
-                            this.showModal(data);
-                        })
-                })
-            })
-        }, 1000)
+        currencies.forEach(currency => {
+            setTimeout(() => {
+                this.appendTemplateItem('country-currency', currency.name, document.querySelector('.country-info-carrency'));
+            }, 500);
+        })
+        languages.forEach(language => {
+            console.log(language)
+            setTimeout(() => {
+                this.appendTemplateItem('country-language', language.name, document.querySelector('.country-info-languages'));
+            }, 500);
+        })
+        container.classList.add('active');
     }
 }

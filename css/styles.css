@@ -12,16 +12,16 @@ body {
 
 /* line 1, ../sass/layout/_header.scss */
 .header {
-  padding: 1.5rem 0;
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
 }
-/* line 4, ../sass/layout/_header.scss */
+/* line 3, ../sass/layout/_header.scss */
 .header h4 {
   font-weight: 800;
   font-size: 16px;
+  padding: 1.5rem 0;
 }
 @media screen and (min-width: 1024px) {
-  /* line 4, ../sass/layout/_header.scss */
+  /* line 3, ../sass/layout/_header.scss */
   .header h4 {
     font-size: 20px;
   }
@@ -233,26 +233,30 @@ body {
 .country-info span {
   font-weight: 600;
 }
+/* line 41, ../sass/layout/_countries.scss */
+.country-info span + span {
+  font-weight: normal;
+}
 
-/* line 43, ../sass/layout/_countries.scss */
+/* line 46, ../sass/layout/_countries.scss */
 .country-info-name {
   margin-bottom: 1rem;
 }
-/* line 45, ../sass/layout/_countries.scss */
+/* line 48, ../sass/layout/_countries.scss */
 .country-info-name a {
   font-weight: 800;
   font-size: 20px;
   color: #222;
 }
 
-/* line 52, ../sass/layout/_countries.scss */
+/* line 55, ../sass/layout/_countries.scss */
 .countries-border-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-/* line 58, ../sass/layout/_countries.scss */
+/* line 61, ../sass/layout/_countries.scss */
 .country-border {
   display: inline-block;
   padding: .2rem 1rem;
@@ -263,6 +267,18 @@ body {
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   border-radius: 3px;
+  margin-bottom: .5rem;
+}
+
+/* line 76, ../sass/layout/_countries.scss */
+.country-info-languages .country-language::after, .country-info-languages .country-currency::after, .country-info-carrency .country-language::after, .country-info-carrency .country-currency::after {
+  content: ',';
+  display: inline-block;
+  margin-right: .5rem;
+}
+/* line 82, ../sass/layout/_countries.scss */
+.country-info-languages .country-language:last-child::after, .country-info-languages .country-currency:last-child::after, .country-info-carrency .country-language:last-child::after, .country-info-carrency .country-currency:last-child::after {
+  content: '';
 }
 
 /* line 1, ../sass/layout/_modal.scss */
