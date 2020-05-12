@@ -27,8 +27,11 @@
 }
 
 .country-image {
+    height: 160px;
+    text-align: center;
     img {
-        width: 100%;
+        width: auto;
+        height: 100%;
     }
 }
 
@@ -64,7 +67,7 @@
     margin-right: 1rem;
     text-align: center;
     background-color: $dark-blue;
-    width: 120px;
+    width: 80px;
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     border-radius: 3px;

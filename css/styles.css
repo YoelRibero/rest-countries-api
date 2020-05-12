@@ -219,64 +219,70 @@ body {
   }
 }
 
-/* line 30, ../sass/layout/_countries.scss */
+/* line 29, ../sass/layout/_countries.scss */
+.country-image {
+  height: 160px;
+  text-align: center;
+}
+/* line 32, ../sass/layout/_countries.scss */
 .country-image img {
-  width: 100%;
+  width: auto;
+  height: 100%;
 }
 
-/* line 35, ../sass/layout/_countries.scss */
+/* line 38, ../sass/layout/_countries.scss */
 .country-info {
   padding: 2rem 1rem;
   font-size: 16px;
 }
-/* line 38, ../sass/layout/_countries.scss */
+/* line 41, ../sass/layout/_countries.scss */
 .country-info span {
   font-weight: 600;
 }
-/* line 41, ../sass/layout/_countries.scss */
+/* line 44, ../sass/layout/_countries.scss */
 .country-info span + span {
   font-weight: normal;
 }
 
-/* line 46, ../sass/layout/_countries.scss */
+/* line 49, ../sass/layout/_countries.scss */
 .country-info-name {
   margin-bottom: 1rem;
 }
-/* line 48, ../sass/layout/_countries.scss */
+/* line 51, ../sass/layout/_countries.scss */
 .country-info-name a {
   font-weight: 800;
   font-size: 20px;
   color: #222;
 }
 
-/* line 55, ../sass/layout/_countries.scss */
+/* line 58, ../sass/layout/_countries.scss */
 .countries-border-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-/* line 61, ../sass/layout/_countries.scss */
+/* line 64, ../sass/layout/_countries.scss */
 .country-border {
   display: inline-block;
   padding: .2rem 1rem;
   margin-right: 1rem;
   text-align: center;
   background-color: #2b3945;
-  width: 120px;
+  width: 80px;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   border-radius: 3px;
   margin-bottom: .5rem;
 }
 
-/* line 76, ../sass/layout/_countries.scss */
+/* line 79, ../sass/layout/_countries.scss */
 .country-info-languages .country-language::after, .country-info-languages .country-currency::after, .country-info-carrency .country-language::after, .country-info-carrency .country-currency::after {
   content: ',';
   display: inline-block;
   margin-right: .5rem;
 }
-/* line 82, ../sass/layout/_countries.scss */
+/* line 85, ../sass/layout/_countries.scss */
 .country-info-languages .country-language:last-child::after, .country-info-languages .country-currency:last-child::after, .country-info-carrency .country-language:last-child::after, .country-info-carrency .country-currency:last-child::after {
   content: '';
 }
@@ -319,15 +325,16 @@ body {
   position: relative;
   margin: 1rem;
   max-height: 600px;
+  max-width: 1400px;
   overflow-y: scroll;
   transition: .3s;
 }
-/* line 35, ../sass/layout/_modal.scss */
+/* line 36, ../sass/layout/_modal.scss */
 .modal-container .btn-close-container {
   background-color: #202c37;
   padding: 2rem 2rem 0;
 }
-/* line 39, ../sass/layout/_modal.scss */
+/* line 40, ../sass/layout/_modal.scss */
 .modal-container .btn-close {
   color: white;
   font-size: 14px;
@@ -342,62 +349,71 @@ body {
   justify-content: center;
   border-radius: 3px;
 }
-/* line 52, ../sass/layout/_modal.scss */
+/* line 53, ../sass/layout/_modal.scss */
 .modal-container .btn-close ion-icon {
   margin-right: .5rem;
 }
-/* line 56, ../sass/layout/_modal.scss */
+/* line 57, ../sass/layout/_modal.scss */
 .modal-container .modal-content {
   background-color: #202c37;
   padding: 2rem;
   border: 0;
 }
-/* line 60, ../sass/layout/_modal.scss */
+/* line 61, ../sass/layout/_modal.scss */
 .modal-container .modal-content .country-info-name a, .modal-container .modal-content .country-info {
   color: #fff;
 }
-/* line 63, ../sass/layout/_modal.scss */
+/* line 64, ../sass/layout/_modal.scss */
 .modal-container .modal-content .country-info {
   font-size: 14px;
 }
-/* line 66, ../sass/layout/_modal.scss */
-.modal-container .modal-content .country-info .country-info-details div {
-  margin-bottom: 1rem;
+/* line 73, ../sass/layout/_modal.scss */
+.modal-container .modal-content .country-container .country-info-details-general, .modal-container .modal-content .country-container .country-info-details-others {
+  margin-bottom: 3rem;
 }
 @media screen and (min-width: 801px) {
-  /* line 71, ../sass/layout/_modal.scss */
+  /* line 72, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  /* line 76, ../sass/layout/_modal.scss */
+  /* line 80, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-image {
     width: 40%;
+    height: auto;
   }
-  /* line 79, ../sass/layout/_modal.scss */
+  /* line 83, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .country-image img {
+    height: auto;
+    width: 100%;
+  }
+  /* line 88, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-info {
     width: 50%;
   }
-  /* line 82, ../sass/layout/_modal.scss */
+  /* line 91, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .countries-border {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
   }
-  /* line 86, ../sass/layout/_modal.scss */
+  /* line 94, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .countries-border .countries-border-title {
     margin: 0;
-    margin-right: .5rem;
+    width: 25%;
   }
-  /* line 91, ../sass/layout/_modal.scss */
+  /* line 98, ../sass/layout/_modal.scss */
+  .modal-container .modal-content .country-container .countries-border .countries-border-items {
+    width: 75%;
+  }
+  /* line 102, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-info-details {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0;
     margin-bottom: 2rem;
   }
-  /* line 96, ../sass/layout/_modal.scss */
+  /* line 107, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-info-details .country-info-details-general, .modal-container .modal-content .country-container .country-info-details .country-info-details-others {
     margin-bottom: 0;
   }

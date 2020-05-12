@@ -103,6 +103,7 @@ export class Interfaz {
                     </div>
                     <div class="countries-border">
                         <div class="countries-border-title">Border Countries:</div>
+                        <div class="countries-border-items"></div>
                     </div>
                 </div>
             </div>
@@ -150,19 +151,19 @@ export class Interfaz {
         $modalContent.innerHTML = this.templateModal(name, flag, nativeName, population, region, subregion, capital, topLevelDomain);
         borders.forEach(border => {
             setTimeout(() => {
-                this.appendTemplateItem('country-border', border, document.querySelector('.countries-border'));
-            }, 500);
+                this.appendTemplateItem('country-border', border, document.querySelector('.countries-border-items'));
+            }, 200);
         })
         currencies.forEach(currency => {
             setTimeout(() => {
                 this.appendTemplateItem('country-currency', currency.name, document.querySelector('.country-info-carrency'));
-            }, 500);
+            }, 200);
         })
         languages.forEach(language => {
             console.log(language)
             setTimeout(() => {
                 this.appendTemplateItem('country-language', language.name, document.querySelector('.country-info-languages'));
-            }, 500);
+            }, 200);
         })
         container.classList.add('active');
     }
