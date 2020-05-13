@@ -3,11 +3,6 @@ import { api, $modalCountries, $overlay, $modalContainer } from './app.js';
 export class Interfaz {
     constructor() {
         this.api = api;
-        this.init = this.init();
-    }
-
-    init() {
-        this.dataArray();
     }
 
     dataArray() {
@@ -124,12 +119,11 @@ export class Interfaz {
             const $countriesContainer = document.querySelector('.countries-container');
             const { flag, name, population, region, capital, alpha3Code} = country;
             const template = this.createTemplate(this.templateCountry(flag, name, population, region, capital, alpha3Code));
-            $countriesContainer.appendChild(template);
+            $countriesContainer.append(template);
         });
     }
 
     appendTemplateItem (classItem, item, container) {
-        console.log(item);
         const template = this.createTemplate(this.templateItems(classItem, item));
         container.appendChild(template);
     }
@@ -145,7 +139,6 @@ export class Interfaz {
     }
 
     showModal(data, container) {
-        console.log(data);
         const $modalContent = document.querySelector('.modal-content');
         const { name, flag, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = data;
         $modalContent.innerHTML = this.templateModal(name, flag, nativeName, population, region, subregion, capital, topLevelDomain);
@@ -160,7 +153,6 @@ export class Interfaz {
             }, 200);
         })
         languages.forEach(language => {
-            console.log(language)
             setTimeout(() => {
                 this.appendTemplateItem('country-language', language.name, document.querySelector('.country-info-languages'));
             }, 200);

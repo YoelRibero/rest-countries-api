@@ -326,7 +326,7 @@ body {
   margin: 1rem;
   max-height: 600px;
   max-width: 1400px;
-  overflow-y: scroll;
+  overflow-y: auto;
   transition: .3s;
 }
 /* line 36, ../sass/layout/_modal.scss */
@@ -358,62 +358,63 @@ body {
   background-color: #202c37;
   padding: 2rem;
   border: 0;
+  border-radius: 0;
 }
-/* line 61, ../sass/layout/_modal.scss */
+/* line 62, ../sass/layout/_modal.scss */
 .modal-container .modal-content .country-info-name a, .modal-container .modal-content .country-info {
   color: #fff;
 }
-/* line 64, ../sass/layout/_modal.scss */
+/* line 65, ../sass/layout/_modal.scss */
 .modal-container .modal-content .country-info {
   font-size: 14px;
 }
-/* line 73, ../sass/layout/_modal.scss */
+/* line 69, ../sass/layout/_modal.scss */
 .modal-container .modal-content .country-container .country-info-details-general, .modal-container .modal-content .country-container .country-info-details-others {
   margin-bottom: 3rem;
 }
 @media screen and (min-width: 801px) {
-  /* line 72, ../sass/layout/_modal.scss */
+  /* line 68, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  /* line 80, ../sass/layout/_modal.scss */
+  /* line 76, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-image {
     width: 40%;
     height: auto;
   }
-  /* line 83, ../sass/layout/_modal.scss */
+  /* line 79, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-image img {
     height: auto;
     width: 100%;
   }
-  /* line 88, ../sass/layout/_modal.scss */
+  /* line 84, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-info {
     width: 50%;
   }
-  /* line 91, ../sass/layout/_modal.scss */
+  /* line 87, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .countries-border {
     display: flex;
     flex-wrap: wrap;
   }
-  /* line 94, ../sass/layout/_modal.scss */
+  /* line 90, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .countries-border .countries-border-title {
     margin: 0;
     width: 25%;
   }
-  /* line 98, ../sass/layout/_modal.scss */
+  /* line 94, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .countries-border .countries-border-items {
     width: 75%;
   }
-  /* line 102, ../sass/layout/_modal.scss */
+  /* line 98, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-info-details {
     display: flex;
     justify-content: space-between;
     margin-bottom: 0;
     margin-bottom: 2rem;
   }
-  /* line 107, ../sass/layout/_modal.scss */
+  /* line 103, ../sass/layout/_modal.scss */
   .modal-container .modal-content .country-container .country-info-details .country-info-details-general, .modal-container .modal-content .country-container .country-info-details .country-info-details-others {
     margin-bottom: 0;
   }

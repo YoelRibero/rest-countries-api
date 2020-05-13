@@ -14,7 +14,7 @@ const $buttonClose = document.querySelector('.btn-close');
 export const $modalCountries = document.querySelector('.modal-countries');
 export const $overlay = document.querySelector('.overlay');
 export const $modalContainer = document.querySelector('.modal-container');
-
+const $checkbox = document.querySelectorAll('.radio');
 
 // Listeners
 
@@ -28,6 +28,23 @@ optionsList.forEach(o => {
     optionsContainer.classList.remove("active");
   });
 });
+
+// Event DOM Content Loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Loaded Countries
+  interfaz.dataArray()
+});
+
+// Event Filter Select
+$checkbox.forEach(radio => {
+  radio.addEventListener('change', e => {
+      const dataCountriesRegion = new API(`https://restcountries.eu/rest/v2/region/${e.target.value}`);
+      dataCountriesRegion.getData()
+        .then(data => {
+          interfaz.tourResults(data);
+        })
+  })
+})
 
 // Events to hide modal
 $buttonClose.addEventListener('click', interfaz.hideModal);
