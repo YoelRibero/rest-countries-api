@@ -1,16 +1,16 @@
-import { api, $modalCountries, $overlay, $modalContainer } from './app.js';
+import { $modalCountries, $overlay, $modalContainer } from './app.js';
 
 export class Interfaz {
-    constructor() {
-        this.api = api;
-    }
+    // constructor() {
+    //     this.api = api;
+    // }
 
-    dataArray() {
-        this.api.getData()
-            .then( data => {
-                this.tourResults(data);
-            })
-    }
+    // dataArray() {
+    //     this.api.getData()
+    //         .then( data => {
+    //             this.tourResults(data);
+    //         })
+    // }
 
     createTemplate(HTMLString) {
 		const html = document.implementation.createHTMLDocument()
@@ -45,6 +45,13 @@ export class Interfaz {
                 </div>
             `
         )
+    }
+
+    removeCountries() {
+        const countries = document.querySelectorAll('.countries-container .countries-country');
+        countries.forEach(country => {
+            country.remove();
+        })
     }
 
     templateModal(name, image, nativeName, population, region, subregion, capital, topLevelDomain) {
@@ -114,13 +121,22 @@ export class Interfaz {
         )
     }
 
-    tourResults(data) {
+    showCountries(data) {
         data.forEach(country => {
             const $countriesContainer = document.querySelector('.countries-container');
             const { flag, name, population, region, capital, alpha3Code} = country;
             const template = this.createTemplate(this.templateCountry(flag, name, population, region, capital, alpha3Code));
             $countriesContainer.append(template);
         });
+    }
+
+    getSearch(value, data) {
+        const countriesFilter = data.filter(countries => {
+            const countryNameLowerCase = countries.name.toLowerCase();
+            const valueLowerCase = value.toLowerCase();
+            return countryNameLowerCase.indexOf(valueLowerCase) !== -1;
+        })
+        this.showCountries(countriesFilter);
     }
 
     appendTemplateItem (classItem, item, container) {

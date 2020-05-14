@@ -20,6 +20,8 @@
     margin: auto;
     border-radius: 8px;
     box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fade .5s forwards;
     @media screen and (min-width: 480px) {
         width: 100%;
         margin: 0;
@@ -32,6 +34,8 @@
     img {
         width: auto;
         height: 100%;
+        opacity: 0;
+        animation: fade .3s forwards;
     }
 }
 
@@ -86,5 +90,17 @@
                 content: '';
             }
         }
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
     }
 }

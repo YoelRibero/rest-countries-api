@@ -121,20 +121,21 @@ body {
 .filter-region-options-container.active {
   max-height: 240px;
   opacity: 1;
+  z-index: 1;
 }
-/* line 78, ../sass/layout/_filter.scss */
+/* line 79, ../sass/layout/_filter.scss */
 .filter-region-options-container::-webkit-scrollbar {
   width: 2px;
   background: #0d141f;
   border-radius: 0 2px 2px 0;
 }
-/* line 83, ../sass/layout/_filter.scss */
+/* line 84, ../sass/layout/_filter.scss */
 .filter-region-options-container::-webkit-scrollbar-thumb {
   background: #525861;
   border-radius: 0 2px 2px 0;
 }
 
-/* line 89, ../sass/layout/_filter.scss */
+/* line 90, ../sass/layout/_filter.scss */
 .selected {
   background: #fff;
   border-radius: 5px;
@@ -144,7 +145,7 @@ body {
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
   order: 0;
 }
-/* line 98, ../sass/layout/_filter.scss */
+/* line 99, ../sass/layout/_filter.scss */
 .selected::after {
   content: "";
   background: url("../img/down.svg");
@@ -158,21 +159,21 @@ body {
   transition: all 0.4s;
 }
 
-/* line 114, ../sass/layout/_filter.scss */
+/* line 115, ../sass/layout/_filter.scss */
 .filter-region-option, .selected {
   cursor: pointer;
   font-weight: 600;
 }
 
-/* line 119, ../sass/layout/_filter.scss */
+/* line 120, ../sass/layout/_filter.scss */
 .filter-region-option {
   margin-bottom: .5rem;
 }
-/* line 121, ../sass/layout/_filter.scss */
+/* line 122, ../sass/layout/_filter.scss */
 .filter-region-option:hover {
   color: #333;
 }
-/* line 124, ../sass/layout/_filter.scss */
+/* line 125, ../sass/layout/_filter.scss */
 .filter-region-option .radio {
   display: none;
 }
@@ -210,6 +211,8 @@ body {
   margin: auto;
   border-radius: 8px;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fade .5s forwards;
 }
 @media screen and (min-width: 480px) {
   /* line 17, ../sass/layout/_countries.scss */
@@ -219,50 +222,52 @@ body {
   }
 }
 
-/* line 29, ../sass/layout/_countries.scss */
+/* line 31, ../sass/layout/_countries.scss */
 .country-image {
   height: 160px;
   text-align: center;
 }
-/* line 32, ../sass/layout/_countries.scss */
+/* line 34, ../sass/layout/_countries.scss */
 .country-image img {
   width: auto;
   height: 100%;
+  opacity: 0;
+  animation: fade .3s forwards;
 }
 
-/* line 38, ../sass/layout/_countries.scss */
+/* line 42, ../sass/layout/_countries.scss */
 .country-info {
   padding: 2rem 1rem;
   font-size: 16px;
 }
-/* line 41, ../sass/layout/_countries.scss */
+/* line 45, ../sass/layout/_countries.scss */
 .country-info span {
   font-weight: 600;
 }
-/* line 44, ../sass/layout/_countries.scss */
+/* line 48, ../sass/layout/_countries.scss */
 .country-info span + span {
   font-weight: normal;
 }
 
-/* line 49, ../sass/layout/_countries.scss */
+/* line 53, ../sass/layout/_countries.scss */
 .country-info-name {
   margin-bottom: 1rem;
 }
-/* line 51, ../sass/layout/_countries.scss */
+/* line 55, ../sass/layout/_countries.scss */
 .country-info-name a {
   font-weight: 800;
   font-size: 20px;
   color: #222;
 }
 
-/* line 58, ../sass/layout/_countries.scss */
+/* line 62, ../sass/layout/_countries.scss */
 .countries-border-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-/* line 64, ../sass/layout/_countries.scss */
+/* line 68, ../sass/layout/_countries.scss */
 .country-border {
   display: inline-block;
   padding: .2rem 1rem;
@@ -276,17 +281,28 @@ body {
   margin-bottom: .5rem;
 }
 
-/* line 79, ../sass/layout/_countries.scss */
+/* line 83, ../sass/layout/_countries.scss */
 .country-info-languages .country-language::after, .country-info-languages .country-currency::after, .country-info-carrency .country-language::after, .country-info-carrency .country-currency::after {
   content: ',';
   display: inline-block;
   margin-right: .5rem;
 }
-/* line 85, ../sass/layout/_countries.scss */
+/* line 89, ../sass/layout/_countries.scss */
 .country-info-languages .country-language:last-child::after, .country-info-languages .country-currency:last-child::after, .country-info-carrency .country-language:last-child::after, .country-info-carrency .country-currency:last-child::after {
   content: '';
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* line 1, ../sass/layout/_modal.scss */
 .modal-countries {
   display: none;

@@ -74,6 +74,7 @@
     &.active {
         max-height: 240px;
         opacity: 1;
+        z-index: 1;
     }
     &::-webkit-scrollbar {
         width: 2px;
