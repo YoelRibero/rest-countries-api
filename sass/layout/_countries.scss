@@ -29,13 +29,18 @@
 }
 
 .country-image {
-    height: 160px;
     text-align: center;
     img {
-        width: auto;
-        height: 100%;
+        width: 100%;
         opacity: 0;
         animation: fade .3s forwards;
+    }
+    @media screen and (min-width: 801px) {
+        height: 160px;
+        img {
+            width: auto;
+            height: 100%;
+        }
     }
 }
 

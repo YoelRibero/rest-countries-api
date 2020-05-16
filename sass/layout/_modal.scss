@@ -69,6 +69,14 @@
             .country-info-details-general, .country-info-details-others{
                 margin-bottom: 3rem;
             }
+            .countries-border-items {
+                p {
+                    margin-bottom: 0;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
             @media screen and (min-width: 801px) {
                 display: flex;
                 align-items: center;

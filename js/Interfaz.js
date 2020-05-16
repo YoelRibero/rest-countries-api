@@ -156,13 +156,19 @@ export class Interfaz {
 
     showModal(data, container) {
         const $modalContent = document.querySelector('.modal-content');
+        // debugger;
         const { name, flag, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = data;
         $modalContent.innerHTML = this.templateModal(name, flag, nativeName, population, region, subregion, capital, topLevelDomain);
-        borders.forEach(border => {
-            setTimeout(() => {
-                this.appendTemplateItem('country-border', border, document.querySelector('.countries-border-items'));
-            }, 200);
-        })
+        if(borders.length > 0) {
+            borders.forEach(border => {
+                setTimeout(() => {
+                    this.appendTemplateItem('country-border', border, document.querySelector('.countries-border-items'));
+                }, 200);
+            })
+        } else {
+            document.querySelector('.countries-border-items').innerHTML = `<p>Country without borders</p>`;
+        }
+        
         currencies.forEach(currency => {
             setTimeout(() => {
                 this.appendTemplateItem('country-currency', currency.name, document.querySelector('.country-info-carrency'));

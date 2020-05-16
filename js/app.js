@@ -4,7 +4,6 @@ import { Interfaz } from './Interfaz.js';
 export const api = new API('https://restcountries.eu/rest/v2/all');
 export const interfaz = new Interfaz();
 
-
 // Vars
 
 const selected = document.querySelector(".selected");
@@ -15,7 +14,8 @@ export const $modalCountries = document.querySelector('.modal-countries');
 export const $overlay = document.querySelector('.overlay');
 export const $modalContainer = document.querySelector('.modal-container');
 const $checkbox = document.querySelectorAll('.radio');
-const $searchInput = document.querySelector('.filter-search input')
+const $searchInput = document.querySelector('.filter-search input');
+// const $bordersCountry = document.querySelectorAll('.country-border')
 
 // Listeners
 
@@ -96,7 +96,26 @@ function tourProducts() {
           .then(data => {
             interfaz.showModal(data, $modalCountries);
           })
+        changeModalContent();
       })
     })
   }, 1000);
+}
+
+// Event inside modal
+function changeModalContent() {
+  setTimeout(() => {
+      document.querySelector('.countries-border').addEventListener('click', (e) => {
+          if(e.target.className === 'country-border') {
+              console.log(e.target.textContent);
+              // interfaz.hideModal();
+              const countryCode = e.target.textContent;
+              const dataCountry = new API(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
+              dataCountry.getData()
+                .then(data => {
+                  interfaz.showModal(data, $modalCountries);
+                })
+          }
+      });
+  }, 1000)
 }
