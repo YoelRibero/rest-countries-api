@@ -86,36 +86,37 @@ window.addEventListener('click', () => {
 // Events to show modal
 function tourProducts() {
   setTimeout(() => {
-    const titleCountries = document.querySelectorAll('.country-info-name a');
+    const titleCountries = document.querySelectorAll('[data-country]');
     titleCountries.forEach(country => {
       country.addEventListener('click', e => {
         e.preventDefault();
-        const countryCode = e.target.dataset.country;
-        const dataCountry = new API(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
-        dataCountry.getData()
-          .then(data => {
-            interfaz.showModal(data, $modalCountries);
-          })
-        changeModalContent();
+        console.log(e);
+        // const countryCode = e.target.dataset.country;
+        // const dataCountry = new API(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
+        // dataCountry.getData()
+        //   .then(data => {
+        //     interfaz.showModal(data, $modalCountries);
+        //   })
+        // changeModalContent();
       })
     })
   }, 1000);
 }
 
 // Event inside modal
-function changeModalContent() {
-  setTimeout(() => {
-      document.querySelector('.countries-border').addEventListener('click', (e) => {
-          if(e.target.className === 'country-border') {
-              console.log(e.target.textContent);
-              // interfaz.hideModal();
-              const countryCode = e.target.textContent;
-              const dataCountry = new API(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
-              dataCountry.getData()
-                .then(data => {
-                  interfaz.showModal(data, $modalCountries);
-                })
-          }
-      });
-  }, 1000)
-}
+// function changeModalContent() {
+//   setTimeout(() => {
+//       document.querySelector('.countries-border').addEventListener('click', (e) => {
+//           if(e.target.className === 'country-border') {
+//               console.log(e.target.textContent);
+//               // interfaz.hideModal();
+//               const countryCode = e.target.textContent;
+//               const dataCountry = new API(`https://restcountries.eu/rest/v2/alpha/${countryCode}`);
+//               dataCountry.getData()
+//                 .then(data => {
+//                   interfaz.showModal(data, $modalCountries);
+//                 })
+//           }
+//       });
+//   }, 1000)
+// }

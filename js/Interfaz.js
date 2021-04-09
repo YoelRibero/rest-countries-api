@@ -1,16 +1,6 @@
 import { $modalCountries, $overlay, $modalContainer } from './app.js';
 
 export class Interfaz {
-    // constructor() {
-    //     this.api = api;
-    // }
-
-    // dataArray() {
-    //     this.api.getData()
-    //         .then( data => {
-    //             this.tourResults(data);
-    //         })
-    // }
 
     createTemplate(HTMLString) {
 		const html = document.implementation.createHTMLDocument()
@@ -21,13 +11,13 @@ export class Interfaz {
     templateCountry(imageUrl, countryName, countryPopulation, countryRegion, countryCapital, key) {
         return(
             `
-                <div class="countries-country">
+                <div class="countries-country" data-country="${key}">
                     <div class="country-image">
                         <img src="${imageUrl}" alt="${key}">
                     </div>
                     <div class="country-info">
                         <div class="country-info-name">
-                            <a href="#" data-country="${key}">${countryName}</a>
+                            <a href="#">${countryName}</a>
                         </div>
                         <div class="country-info-population">
                             <span>Population: </span>
